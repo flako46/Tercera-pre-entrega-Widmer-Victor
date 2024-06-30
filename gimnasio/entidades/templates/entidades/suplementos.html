@@ -1,0 +1,40 @@
+{% extends "entidades/trainer.html" %}
+
+{% block titulo %}
+
+<section class="trainer_section layout_padding">
+    <div class="container">
+      <div class="heading_container">
+        <h2>
+            Suplementos disponibles
+        </h2>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Nombre del producto</th>
+                    <th>Sabor</th>
+                    <th>Presentación</th>
+                    <th>Precio</th>
+                    <th>Cantidades</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for c in suplementos %}
+                <tr>
+                    <th>{{ c.id }}</th>
+                    <th>{{ c.nombre }}</th>
+                    <th>{{ c.sabor }}</th>
+                    <th>{{ c.presentacion }}</th>
+                    <th>{{ c.precio }}</th>
+                    <th>{{ c.cantidades }}</th>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+      </div>
+    </div class="container">
+</section class="trainer_section layout_padding">
+ 
+
+{% endblock titulo %}

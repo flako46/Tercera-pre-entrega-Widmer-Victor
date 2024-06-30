@@ -1,0 +1,40 @@
+{% extends "entidades/trainer.html" %}
+
+{% block titulo %}
+
+<section class="trainer_section layout_padding">
+    <div class="container">
+      <div class="heading_container">
+        <h2>
+            Clientes GYM
+        </h2>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>DNI</th>
+                    <th>E-mail</th>
+                    <th>Teléfono</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for p in clientes %}
+                <tr>
+                    <th>{{ p.id }}</th>
+                    <th>{{ p.nombre }}</th>
+                    <th>{{ p.apellido }}</th>
+                    <th>{{ p.dni }}</th>
+                    <th>{{ p.email }}</th>
+                    <th>{{ p.telefono }}</th>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+      </div>
+    </div class="container">
+</section class="trainer_section layout_padding">
+ 
+
+{% endblock titulo %}
