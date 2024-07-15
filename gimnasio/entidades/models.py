@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 # Create your models here.
 class Producto(models.Model):
@@ -48,4 +49,11 @@ class Clientes(models.Model):
         verbose_name = "Cliente"
         verbose_name_plural = "Clientes"
         ordering = ["nombre", "apellido", "dni", "email", "telefono"]
+        
+class Avatar(models.Model):
+    imagen =models.ImageField(upload_to='avatares')
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    
+    def __str__(self):
+        return f"{self.user} {self.imagen}"
     

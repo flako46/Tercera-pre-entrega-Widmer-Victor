@@ -23,6 +23,8 @@
 
   <!-- fonts style -->
   <link href="https://fonts.googleapis.com/css?family=Poppins:400,600,700&display=swap" rel="stylesheet">
+  <!-- Font Awesome-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <!-- Custom styles for this template -->
   <link href="{% static 'css/style.css' %}" rel="stylesheet" />
   <!-- responsive style -->
@@ -47,6 +49,8 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <div class="d-flex ml-auto flex-column flex-lg-row align-items-center">
               <ul class="navbar-nav  ">
+                
+                {% if user.is_authenticated %}
                 <li class="nav-item active">
                   <a class="nav-link" href="{% url 'home' %}">Inicio <span class="sr-only">(current)</span></a>
                 </li>
@@ -58,14 +62,34 @@
                   <a class="nav-link" href="{% url 'trainer' %}"> Suplementos</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="{% url 'contact' %}"> Contactanos</a>
-                </li>
-                <li class="nav-item">
                   <a class="nav-link" href="{% url 'entrenadores' %}"> Entrenadores</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="{% url 'membresias' %}"> Planes</a>
                 </li>
+                <li class="nav-item">
+                  <p style="color:#E5FC16"> [{{user.first_name}} {{user.last_name}}] </p>
+                </li>
+                <div class="text-center">
+                  <a href= "{% url 'agregar_avatar' %}"><img src="{{ request.session.avatar }}" height="40px" weight="40px" alt="mi foto"></a>
+                </div>
+                <!-- agregar avatar aqui-->
+                <form method="post" action="{% url 'logout' %}">
+                  {% csrf_token %}
+                  <button type="submit" class="nav-link bg-danger ms-2">Logout</button>
+                </form>
+
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'perfil' %}"> Perfil</a>
+                </li>
+                {% else %}
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'login' %}"> Login</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'registro' %}"> Registrate</a>
+                </li>
+                {% endif %}
               </ul>
               <div class="user_option">
                 <form class="form-inline my-2 my-lg-0 ml-0 ml-lg-4 mb-3 mb-lg-0">
@@ -100,8 +124,8 @@
                       "Con persistencia y dedicación, transformarás tus sueños en realidad y tus esfuerzos en fuerza."
                     </p>
                     <div class="">
-                      <a href="">
-                        Contactanos
+                      <a href="{% url 'acerca' %}">
+                        Acerca de mí
                       </a>
                     </div>
                   </div>
@@ -127,8 +151,8 @@
                       "Con disciplina y determinación, cada repetición te acerca más a la mejor versión de ti mismo."
                     </p>
                     <div class="">
-                      <a href="">
-                        Contactanos
+                      <a href="{% url 'acerca' %}">
+                        Acerca de mí
                       </a>
                     </div>
                   </div>
@@ -154,8 +178,8 @@
                       "Con cada esfuerzo, te acercas a la cima de tu propia superación; no hay límites para quien se atreve a luchar."
                     </p>
                     <div class="">
-                      <a href="">
-                        Contactanos
+                      <a href="{% url 'acerca' %}">
+                        Acerca de mí
                       </a>
                     </div>
                   </div>
@@ -181,8 +205,8 @@
                       "El éxito en el gimnasio se construye con constancia y compromiso; cada día es una oportunidad para avanzar un paso más hacia tus metas."
                     </p>
                     <div class="">
-                      <a href="">
-                        Contactanos
+                      <a href="{% url 'acerca' %}">
+                        Acerca de mí
                       </a>
                     </div>
                   </div>
@@ -208,8 +232,8 @@
                       "La consistencia en tus acciones y la tenacidad en tu mentalidad son la fórmula para alcanzar tus objetivos en el gimnasio y más allá."
                     </p>
                     <div class="">
-                      <a href="">
-                        Contactanos
+                      <a href="{% url 'acerca' %}">
+                        Acerca de mí
                       </a>
                     </div>
                   </div>
@@ -407,46 +431,6 @@
   <!-- end trainer section -->
 
   <!-- contact section -->
-
-  <section class="contact_section ">
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-md-6 px-0">
-          <div class="img-box">
-            <img src="{% static 'images/contact-img.jpg' %}" alt="">
-          </div>
-        </div>
-        <div class="col-lg-5 col-md-6">
-          <div class="form_container pr-0 pr-lg-5 mr-0 mr-lg-2">
-            <div class="heading_container">
-              <h2>
-                Contact Us
-              </h2>
-            </div>
-            <form action="">
-              <div>
-                <input type="text" placeholder="Name" />
-              </div>
-              <div>
-                <input type="email" placeholder="Email" />
-              </div>
-              <div>
-                <input type="text" placeholder="Phone Number" />
-              </div>
-              <div>
-                <input type="text" class="message-box" placeholder="Message" />
-              </div>
-              <div class="d-flex ">
-                <button>
-                  Send
-                </button>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
 
   <!-- end contact section -->
 

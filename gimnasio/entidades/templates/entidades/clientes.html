@@ -1,6 +1,8 @@
 {% extends "entidades/trainer.html" %}
 
 {% block titulo %}
+<!-- Font Awesome-->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
 <section class="trainer_section layout_padding">
     <div class="container">
@@ -8,6 +10,25 @@
         <h2>
             Clientes GYM
         </h2>
+        <table>
+            <tr>         
+                <td>       
+                    <a       
+                    href="{% url 'clientes_form' %}"       
+                    class="btn btn-primary btn-sm"       
+                    ><i class="fa fa-plus fa-lg" title="Crear"> </i>       
+                    </a>        
+                </td>   
+                <td>
+                    <a
+                    href="{% url 'buscar_clientes' %}"
+                    class="btn btn-danger"
+                    style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;"
+                    ><i class="fa-solid fa-magnifying-glass"></i>
+                    </a>
+                </td>            
+            </tr>       
+        </table>
         <table class="table table-striped">
             <thead>
                 <tr>
@@ -17,6 +38,7 @@
                     <th>DNI</th>
                     <th>E-mail</th>
                     <th>Teléfono</th>
+                    <th>Acciones</th>
                 </tr>
             </thead>
             <tbody>
@@ -28,8 +50,22 @@
                     <th>{{ p.dni }}</th>
                     <th>{{ p.email }}</th>
                     <th>{{ p.telefono }}</th>
+                    <th>
+                        <a
+                            href="{% url 'clientesUpdate' p.id %}"
+                            class="btn btn-primary"
+                            style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;"
+                            ><i class="fa fa-edit fa-sm" title="Edit Record"></i>
+                        </a>
+                        <a
+                            href="{% url 'clientesDelete' p.id %}"
+                            class="btn btn-danger"
+                            style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;"
+                            ><i class="fa fa-trash fa-sm" title="Delete Record"></i>
+                        </a>                
+                    </th>
                 </tr>
-            {% endfor %}
+            {% endfor %}  
             </tbody>
         </table>
       </div>

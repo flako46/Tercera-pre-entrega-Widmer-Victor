@@ -4,17 +4,18 @@
 <!-- Font Awesome-->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
+
 <section class="trainer_section layout_padding">
     <div class="container">
       <div class="heading_container">
         <h2>
-            Entrenadores especializados
+            Planes a tu medida
         </h2>
         <table>
             <tr>         
                 <td>       
                     <a       
-                    href="{% url 'entrenadores_form' %}"       
+                    href="{% url 'membresias_create' %}"       
                     class="btn btn-primary btn-sm"       
                     ><i class="fa fa-plus fa-lg" title="Crear"> </i>       
                     </a>        
@@ -25,26 +26,26 @@
             <thead>
                 <tr>
                     <th>Id</th>
-                    <th>Nombre</th>
-                    <th>Apellido</th>
+                    <th>Tipo de Membresía</th>
+                    <th>Precio</th>
                     <th>Acciones</th>
                 </tr>
             </thead>
             <tbody>
-            {% for e in entrenadores %}
+            {% for m in membresias_list %}
                 <tr>
-                    <th>{{ e.id }}</th>
-                    <th>{{ e.nombre }}</th>
-                    <th>{{ e.apellido }}</th>
+                    <th>{{ m.id }}</th>
+                    <th>{{ m.nombre }}</th>
+                    <th>{{ m.precio }}</th>
                     <th>
                         <a
-                            href=""
+                            href="{% url 'membresias_update' m.id %}"
                             class="btn btn-primary"
                             style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;"
                             ><i class="fa fa-edit fa-sm" title="Edit Record"></i>
                         </a>
                         <a
-                            href=""
+                            href="{% url 'membresias_delete' m.id %}"
                             class="btn btn-danger"
                             style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;"
                             ><i class="fa fa-trash fa-sm" title="Delete Record"></i>

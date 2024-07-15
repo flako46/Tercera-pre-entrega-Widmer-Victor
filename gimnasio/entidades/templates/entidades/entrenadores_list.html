@@ -4,6 +4,7 @@
 <!-- Font Awesome-->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
+
 <section class="trainer_section layout_padding">
     <div class="container">
       <div class="heading_container">
@@ -14,7 +15,7 @@
             <tr>         
                 <td>       
                     <a       
-                    href="{% url 'entrenadores_form' %}"       
+                    href="{% url 'entrenadores_create' %}"       
                     class="btn btn-primary btn-sm"       
                     ><i class="fa fa-plus fa-lg" title="Crear"> </i>       
                     </a>        
@@ -31,20 +32,20 @@
                 </tr>
             </thead>
             <tbody>
-            {% for e in entrenadores %}
+            {% for m in entrenadores_list %}
                 <tr>
-                    <th>{{ e.id }}</th>
-                    <th>{{ e.nombre }}</th>
-                    <th>{{ e.apellido }}</th>
+                    <th>{{ m.id }}</th>
+                    <th>{{ m.nombre }}</th>
+                    <th>{{ m.apellido }}</th>
                     <th>
                         <a
-                            href=""
+                            href="{% url 'entrenadores_update' m.id %}"
                             class="btn btn-primary"
                             style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;"
                             ><i class="fa fa-edit fa-sm" title="Edit Record"></i>
                         </a>
                         <a
-                            href=""
+                            href="{% url 'entrenadores_delete' m.id %}"
                             class="btn btn-danger"
                             style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;"
                             ><i class="fa fa-trash fa-sm" title="Delete Record"></i>

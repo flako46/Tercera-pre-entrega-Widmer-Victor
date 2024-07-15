@@ -185,6 +185,8 @@ a:focus {
   z-index: 3;
 }
 
+
+
 .custom_nav-container {
   z-index: 99999;
   padding: 15px 0;
@@ -443,7 +445,7 @@ a:focus {
 .contact_section {
   position: relative;
   background-color: #27223f;
-  color: #ffffff;
+  color: #000000;
 }
 
 .contact_section .heading_container {
@@ -476,7 +478,7 @@ a:focus {
 .contact_section input {
   width: 100%;
   border: none;
-  background-color: #ffffff;
+  background-color: #27223f;
   outline: none;
   color: #000000;
   margin-top: 25px;

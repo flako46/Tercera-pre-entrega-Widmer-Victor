@@ -1,0 +1,10 @@
+{% extends "entidades/trainer.html" %}
+<!-- Font Awesome-->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+{% block titulo %}
+{% csrf_token %}
+<h1>Te has desloguado correctamente!</h1>
+<p>SOUTH FITNESS CENTER</p>
+<a href="{% url 'login' %}">Clickea aqui para volver a acceder</a>
+
+{% endblock titulo %}
