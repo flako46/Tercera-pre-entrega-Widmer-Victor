@@ -231,7 +231,7 @@ def register(request):
 def editProfile(request):
     usuario = request.user
     if request.method == "POST":
-        miForm = UserChangeForm(request.POST)
+        miForm = UserEditForm(request.POST)
         if miForm.is_valid():
             user = User.objects.get(username=usuario)
             user.email = miForm.cleaned_data.get("email")

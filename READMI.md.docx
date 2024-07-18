@@ -1,6 +1,6 @@
 README
 Este proyecto se basa en la administración de clientes de un gimnasio. 
-La es poder lograr en la medida de lo posible un sistema de gestion de administracion completo donde se puedan agregar clientes y sus pagos, productos, control de ingreso de cleintes y apertura de puerta de acuerdo a cuota al dia y reclamos de vencidos.
+La idea es poder lograr en la medida de lo posible un sistema de gestion de administracion completo donde se puedan agregar clientes y sus pagos, productos, control de ingreso de clientes y apertura de puerta de acuerdo a cuota al dia y reclamos de vencidos.
 
 Comencé copiando un template que me gustó mucho de la web y lo fui modificando ya que era mucho más complejo que el que nos brindaron de ejemplo, pero como me gustaba la presentación y la lógica del mismo continué con ese modelo.
 
@@ -8,16 +8,15 @@ Por ahora he creado 4 modelos: Clientes, Entrenadores, Productos y Membresías. 
 En la página principal arriba se ven los linkeos que nos llevan a las páginas:
  “porque elegirnos” que se muestra en la página principal y en un html aparte, 
 “suplementos” que se muestra en la página principal y en un html aparte que tiene añadido un link en cada imagen que redirecciona a otro html donde muestro una lista de los distintos objeto productos disponibles en base de datos. Cada foto redirecciona al mismo html por ahora.
-“contáctanos” que se muestra solo en la parte final de la pagina principal y que es una parte que aun no esta trabajada de la pagina.
 “entrenadores” redirecciona a un html donde muestro una lista de los objeto entrenadores que se encuentran en base de datos.
-“planes” redirecciona a un html donde muestro una lista de los objetos membresías que se encuentran en base de datos. También en pagina principal a mitad de pagina hay un botón que dice COMIENCE YA Que redirecciona por ahora también a las membresías pero que luego quisiera linkear a una forma rápida de contactarte con el gym via instagram y whatsapp básicamente
-Luego cree la sección clientes que no muestro ningún enlace en la página principal porque no es la idea mostrarla al público sino a usuarios empleados del gym.
-Cree formularios de ingreso de clientes, membresías y entrenadores por ahora con las siguientes url de acceso:
-http://localhost:8000/clientes_form/
-http://localhost:8000/membresias_form/
-http://localhost:8000/entrenadores_form/
-En los mismos se pueden agregar objetos de cada clase a la base de datos.
+“planes” redirecciona a un html donde muestro una lista de los objetos membresías que se encuentran en base de datos. También en pagina principal a mitad de pagina hay un botón que dice COMIENCE YA Que redirecciona por ahora también a las membresías pero que luego quisiera linkear a una forma rápida de contactarte con el gym via instagram y whatsapp básicamente.
+En el index a mitad de pagina tambien esta el ACERCA DE en donde cuento un poco de mi.
+Luego cree la sección clientes que no muestro ningún enlace en la página principal porque no es la idea mostrarla al público sino a usuarios empleados del gym:
+http://localhost:8000/clientes
 
-Por ultimo cree la búsqueda de clientes en donde busco por apellido de cliente en el siguiente link:
-http://localhost:8000/buscar_clientes/
-Por cualquier consulta el superusuario el Victor y la clave 12345
+Les deje un video explicativo del funcionamiento de la pagina: https://youtu.be/R3zq7-Fg7UE
+
+
+Por cualquier consulta el superusuario el Victor y la clave 12345 - Otro usuario es LAra y la clave lara4646$$.
+
+
